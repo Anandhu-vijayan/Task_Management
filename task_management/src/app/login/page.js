@@ -34,7 +34,7 @@ export default function LoginPage() {
           className="w-full mb-4 p-2 border"
         />
         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
-          Login
+          Signin
         </button>
       </form>
       <p className="mt-2 text-sm">

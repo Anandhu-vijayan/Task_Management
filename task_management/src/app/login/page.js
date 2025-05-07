@@ -11,7 +11,13 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Later: Send data to your /api/auth/login route
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      header: { 'content-type': 'application/json' },
+      body: JSON.stringify(form)
+    })
+    const data = await res.json();
+    alert(data.message);
     console.log('Logging in with:', form);
   };
 

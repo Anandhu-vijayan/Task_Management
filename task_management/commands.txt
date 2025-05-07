@@ -1,0 +1,10 @@
+Always run the migration using
+npx sequelize-cli db:migrate
+Create a migration file using
+npx sequelize-cli model:generate --name User --attributes "name:string,email:string,password:string,role:enum:{admin,user}"
+If you ever need to undo the last migration:
+npx sequelize-cli db:migrate:undo
+To add a new column:
+npx sequelize-cli migration:generate --name add-age-to-user
+npx sequelize-cli db:migrate
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

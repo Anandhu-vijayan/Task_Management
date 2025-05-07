@@ -1,5 +1,5 @@
 // models/User.js
-import { DataTypes } from 'Sequelize';
+import { DataTypes } from 'sequelize';
 import sequelize from '../lib/db.js';
 
 const User = sequelize.define('User', {
@@ -29,5 +29,5 @@ const User = sequelize.define('User', {
   tableName: 'user_management',
   timestamps: true,
 });
-
+console.log("USER",User);
 export default User;

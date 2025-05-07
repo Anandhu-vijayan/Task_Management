@@ -1,3 +1,27 @@
+import { Sequelize } from 'sequelize';
+import pg from 'pg';
+
+const sequelize = new Sequelize(
+  process.env.PGDATABASE,
+  process.env.PGUSER,
+  process.env.PGPASSWORD,
+  {
+    host: process.env.PGHOST,
+    dialect: 'postgres',
+    dialectModule: pg,
+    logging: console.log,
+    // dialectOptions: {
+    //   ssl: {
+    //     require: false,
+    //     rejectUnauthorized: false, // Supabase uses self-signed certs
+    //   },
+    // },
+  }
+);
+
+
+export default sequelize;
+
 // // lib/db.js
 // import { Pool } from 'pg';
 
@@ -10,11 +34,3 @@
 // });
 
 // export default pool;
-
-const { Sequelize } = require('Sequelize');
-const sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSER, process.env.PGPASSWORD, {
-  host: process.env.PGHOST,
-  dialect: 'postgres',
-  logging: false,
-});
-module.exports = sequelize;
